@@ -1,0 +1,4 @@
+alias clr='clear'
+alias wdi="~/Documents/WDI/WDI4_homework/Keryn_Robinson/"
+alias op='atom .'
+alias gs='git status'
