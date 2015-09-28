@@ -6,6 +6,5 @@
 
 <!-- This is my website -->
 
-[My hobby -art](http://wwww.gregfernandes.com)
 
 
