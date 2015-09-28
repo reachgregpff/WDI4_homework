@@ -6,4 +6,4 @@
 * get a warrant
 * @Kerynr_artist
 
-I have a blog about art: (http://kerynrobinson.com) [click here]
+I have a blog about art: [click here](http://kerynrobinson.com)
