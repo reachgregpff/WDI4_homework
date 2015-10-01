@@ -53,26 +53,34 @@ var PT = {
 //Prints the final route
   printRoute : function(){
 
-    console.log("Here's your route!");
+    /*console.log("Here's your route!");
     console.log(PT.journeyStops.join("--------->"));
-    console.log( (PT.journeyStops.length-1) + " stops Total");
+    console.log( (PT.journeyStops.length-1) + " stops Total"); */
+
+    var answer = document.getElementById("Your Route");
+    //console.log(answer.innerHTML + "*************");
+    answer.innerHTML = "Here's your route!<br>" + PT.journeyStops.join("--------->") + "<br>" + (PT.journeyStops.length-1) + " stops Total";
+
   }
 
 }   // END OF OBJECT PT
 
-function getInput( input) {
+/*function getInput( input) {
       console.log("Please enter the  " + input + " : ");
       return prompt();
 }
 
 origin = getInput("Origin");
-destination = getInput("Destination");
+destination = getInput("Destination");*/
 
-//origin = "Hawthorn";
-//destination = "Flagstaff";
+
 
 
 //CALL functions to find the Train Line and stop of the origin
+
+var plan = function()  {
+
+
 var originLineIndex = PT.findTrainLine(origin); 
 var originStopIndex = PT.findStop(originLineIndex, origin);
 //console.log("Origin Line " + originLineIndex + " Origin Index = " + originStopIndex);
@@ -108,6 +116,39 @@ if( originLineIndex == destinationLineIndex){   //Origin and destination are in 
 console.log("ORIGIN is : " + origin);
 console.log("DESTINATION is : " + destination);
 PT.printRoute();
+
+}
+
+var origin = "Hawthorn";        //default values
+var destination = "Flagstaff";  //default values
+
+var planButton = document.getElementById('plan_button');
+planButton.addEventListener('click', 
+  function () {
+
+    var originInput = document.getElementById("origin");
+    origin = originInput.value;
+    //console.log(origin);
+    var destinationInput = document.getElementById("destination");
+    destination = destinationInput.value;
+    //console.log(destination);
+
+    plan();
+  });
+
+
+
+
+
+
+/*console.log("Here's your route!");
+console.log(PT.journeyStops.join("--------->"));
+console.log( (PT.journeyStops.length-1) + " stops Total"); */
+
+
+
+
+
 
 
 
