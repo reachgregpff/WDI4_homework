@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mockup Bank</title>
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+
+<body>
+
+  <img src="bank_logo.png"> 
+  <h1> ONLINE BANK </h1>
+
+
+  <div class="transactions">
+    <div class="savings">
+      <h2>SAVINGS</h1>
+      <h3>YOUR BALANCE IS ...</h1>
+      <p class='balance' id="savings_balance">$00.00</p>
+      <input id="savings_input" placeholder="ENTER AMOUNT HERE">
+      <br>
+      <button id="savings_withdraw">WITHDRAW</button>
+      <button id="savings_deposit">DEPOSIT</button>
+    </div>
+    <div class="checking">
+      <h2>CHECKING</h1>
+      <h3>YOUR BALANCE IS ...</h1>
+      <p class='balance' id="checking_balance">$00.00</p>
+      <input id="checking_input" placeholder="ENTER AMOUNT HERE">
+      <br>
+      <button id="checking_withdraw">WITHDRAW</button>
+      <button id="checking_deposit">DEPOSIT</button>
+    </div>
+  </div>
+
+  <div id="result"></div>
+
+  <script src="bank.js"></script>
+  
+</body>
+</html>
