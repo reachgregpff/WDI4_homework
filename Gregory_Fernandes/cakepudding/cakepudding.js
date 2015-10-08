@@ -9,7 +9,9 @@ function elemFind(element){
   }
 }
 
-var heroes = ["superman", "scarlet", "falcon", "wolverine", "spiderman", "wonderwoman", "batman", "robin", "antman", "captain america", "hulk", "batwoman", "black widow", "loki", "thor", "hellboy"];
+var heroes = ["magneto", "swamp thing", "flash gordon", "wonder woman", "superman", "scarlet", "falcon", "wolverine", "spiderman", 
+              "wonderwoman", "batman", "robin", "antman", "hulk", "batwoman", 
+              "thing", "loki", "thor", "hellboy"];
 
 var randomHero = "";
 var maskedWord = "";
@@ -43,7 +45,17 @@ function startGame() {
 
 function isLetterCorrect() {
   //get the letter that was entered from the name of the button
-  letter = event.target.innerHTML; 
+  letter = event.target.innerHTML;
+
+  if(letter === "SPACEBAR") {  // check if spacebar
+    letter = ' ';
+  }
+
+  //check if letter was already entered
+  if(lettersEnteredSoFar.indexOf(letter) != -1) {
+    //letter was already entered
+    return;
+  }
   
 
   // Update "You have entered xxxxx letters"
@@ -60,7 +72,6 @@ function isLetterCorrect() {
       matchCount ++;
       matchFound = true;
     }
-    
   }  //end of for loop
 
 
@@ -83,11 +94,6 @@ function isLetterCorrect() {
 }
 
 
-
-
-var playArea = "";
-var playAreaHandler = elemFind("#secret_word")[0].innerHTML;
-
 //Add event handlers to all buttons
 elemFind("#start_button")[0].addEventListener('click', startGame );
 
@@ -95,8 +101,6 @@ for(var i=0; i<26; i++) {
   elemFind(".span-1")[i].addEventListener('click', isLetterCorrect );
 }
 
-
-
-
+elemFind(".spacebar")[0].addEventListener('click', isLetterCorrect );
 
 
