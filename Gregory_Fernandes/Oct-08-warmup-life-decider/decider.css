@@ -1,0 +1,32 @@
+body{
+  margin: 0 auto;
+  max-width: 900px
+}
+
+img{
+  float: left; /* does nothing*/
+  max-width: 100%;
+}
+
+#letters{
+  font-size: 300;
+  font-weight: bolder;
+  text-align: center;
+}
+
+.span-2, .span-3, .span-4 {
+  min-height:  100px;
+  margin-bottom: 10px;       /* 10/900 */
+  float: left;
+  margin-right: 1.11111111%;
+   
+  width: 98.88888%;  //added thjis to make it responsive
+
+}
+
+.span-2 {
+  background-color: white;
+  /* 590/900  - 10 for margin-right for each span*/ 
+  width: 65.555555555%;
+
+}
