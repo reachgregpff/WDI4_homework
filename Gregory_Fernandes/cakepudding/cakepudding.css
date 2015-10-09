@@ -8,20 +8,17 @@ img{
   max-width: 100%;
 }
 
-#letters{
-  font-size: 300;
-  font-weight: bolder;
-  text-align: center;
-}
-
 .span-2, .span-3, .span-4 {
   min-height:  100px;
   margin-bottom: 10px;       /* 10/900 */
   float: left;
   margin-right: 1.11111111%;
-   
-  width: 98.88888%;  //added thjis to make it responsive
+  width: 98.88888%;  //added this to make it responsive
+}
 
+#main_heading{
+  font-size: 60;
+  text-align: center;
 }
 
 .span-2 {
@@ -40,34 +37,23 @@ img{
   font-weight: bolder;
 }
 
-.span-4 {
-  background-color: white;
-  /* 290/900  - 10 for margin-right for each span*/ 
-  width: 32.222222%;
-
-}
-
 .span-1{
 
   min-height:  30px;
   margin-bottom: 10px;       /* 10/900 */
   float: left;
   margin-right: 1.11111111%;
-   
-}
-
-.span-1 {
   background-color: mistyrose;
   /* 290 / 900   - --------- 10 for margin-right for each span*/
   /*width: 2.96296296296%;    */
   width: 2.711111%;
 }
 
-.spacebar {
-  background-color: mistyrose;
-  width: 98.8888888%;
+.span-4 {
+  background-color: white;
+  /* 290/900  - 10 for margin-right for each span*/ 
+  width: 32.222222%;
 }
-
 
 
 #turns_remaining{
@@ -78,6 +64,15 @@ img{
   color: red;
 }
 
+/*at 600 px make span 3 width 600px */
+@media all and (min-width: 600px) {
 
+  .span-2 {
+    width: 65.555555555%;
+  }
+  .span-1{
+    width: 2.711111%;
+  }
+}
 
 

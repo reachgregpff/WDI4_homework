@@ -9,24 +9,33 @@ function elemFind(element){
   }
 }
 
-var heroes = ["magneto", "swamp thing", "flash gordon", "wonder woman", "superman", "scarlet", "falcon", "wolverine", "spiderman", 
-              "wonderwoman", "batman", "robin", "antman", "hulk", "batwoman", 
-              "thing", "loki", "thor", "hellboy"];
+var heroes = ["magneto", "flash", "metamorpho", "storm", "superman", "scarlet", "falcon", "wolverine", "spiderman", 
+              "batgirl", "batman", "robin", "antman", "hulk", 
+              "thing", "loki", "thor", "hellboy", "iceman"];
 
-var randomHero = "";
+var randomHero = ""; 
 var maskedWord = "";
 var lettersEnteredSoFar = "";
-var turnsLeft = null;
+var turnsLeft = null; 
 var matchCount = null;
-
 
 function startGame() {
 
+  //initialize variables
+  randomHero = "";
+  maskedWord = "";
+  lettersEnteredSoFar = "";
+  turnsLeft = null;
+  matchCount = null;
+
   //Get secret word -------- random hero name
+  elemFind("#secret_word")[0].innerHTML = "";
+  elemFind("#main_pic")[0].src="marvel_character_group-crop.jpg";
+  elemFind("#letters_entered")[0].innerHTML = "";
+
   randomHero = heroes[Math.floor(Math.random()*heroes.length)];
   randomHero = randomHero.toUpperCase();
   console.log(randomHero);
-  //console.log(event.target.innerHTML);
 
   //Update the turns remaining count to 7
   turnsLeft = 7
@@ -40,23 +49,16 @@ function startGame() {
 
   //initialize matchCount
   matchCount = 0;
-
 }
 
 function isLetterCorrect() {
   //get the letter that was entered from the name of the button
   letter = event.target.innerHTML;
 
-  if(letter === "SPACEBAR") {  // check if spacebar
-    letter = ' ';
-  }
-
   //check if letter was already entered
   if(lettersEnteredSoFar.indexOf(letter) != -1) {
-    //letter was already entered
     return;
   }
-  
 
   // Update "You have entered xxxxx letters"
   lettersEnteredSoFar +=letter;       
@@ -74,7 +76,6 @@ function isLetterCorrect() {
     }
   }  //end of for loop
 
-
   if(matchFound === true){
     //Display naskedWord replaced with letter
     elemFind("#secret_word")[0].innerHTML = maskedWord.split('').join(' ');
@@ -85,22 +86,18 @@ function isLetterCorrect() {
   }
 
   if(matchCount === randomHero.length) {
-    //console.log("Congratulations");
     elemFind("#main_pic")[0].src="Congrats.png";
   }else if(turnsLeft == 0) {
     elemFind("#main_pic")[0].src="Better Luck.jpg";
+    elemFind("#secret_word")[0].innerHTML = "THE ANSWER IS " + randomHero;
   }
-
 }
-
 
 //Add event handlers to all buttons
 elemFind("#start_button")[0].addEventListener('click', startGame );
-
 for(var i=0; i<26; i++) {
   elemFind(".span-1")[i].addEventListener('click', isLetterCorrect );
 }
 
-elemFind(".spacebar")[0].addEventListener('click', isLetterCorrect );
 
 
