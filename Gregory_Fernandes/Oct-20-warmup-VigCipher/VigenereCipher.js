@@ -1,5 +1,5 @@
 function getInput( input) {
-      console.log("Please enter the  message " + input + ":" );
+      console.log("Please enter the " + input + ":" );
       return prompt();
 }
 
