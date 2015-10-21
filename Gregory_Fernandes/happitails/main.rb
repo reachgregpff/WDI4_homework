@@ -25,10 +25,11 @@ tweety = Animal.new("Tweety", 1, "female", "avian", ["seeds"])
  $shelter[0][joey.name] = joey
 
 #add some clients (with pets) to the shelter
-homer_pets = []
-lisa_pets = []
-homer_pets << goofy
-lisa_pets << sylvester << stuart
+homer_pets = {} #just an empty hash of pet objects
+lisa_pets = {}  #just an empty hash of pet objects
+homer_pets[goofy.name] = goofy
+lisa_pets[sylvester.name] = sylvester 
+lisa_pets[stuart.name] = stuart
 
 homer = Client.new("Homer Simpson", 2, 40, homer_pets)
 lisa = Client.new("Lisa Simpson", 0, 10, lisa_pets)
@@ -67,14 +68,14 @@ def create_client
   age = gets.chomp
   puts "How many pets does the client have?"
   pet_count = gets.chomp.to_i
-  pets = []
+  pets = {}
   for i in 0..(pet_count-1) do
-    pets << create_animal
+    pet = create_animal
+    pets[pet.name] = pet
     i = i+1
   end
   Client.new(name, number_of_children, age, pets)
 end
-
 
 #Now that we have a few clients and animals in the shelter, we can add more
 while true
@@ -101,6 +102,7 @@ while true
   elsif input == '4'    #Create a client
     new_client = create_client
     $shelter[1][new_client.name] = new_client
+
   elsif input == '5'    #Adopt an animal
     puts "Please enter the client name"
     client_name = gets.chomp
