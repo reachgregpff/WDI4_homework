@@ -1,0 +1,24 @@
+<!--    recipes that contain 3 ingredients   -->
+
+<h1 style="color:red">Recipes that use 3 ingredients:</h1>
+
+<%for i in 0..(@combo3.length-1) do %>
+
+  <%if JSON.parse(@results3[i])["count"] != 0%>
+
+    <h2>  <%=@combo3[i]%>   </h2>
+
+    <%@results3[i].each  { |recipe | %>
+
+      <p style="background-color:yellow"> <%=JSON.parse(recipe)["recipes"].first["title"]%> </p>
+
+    <%}%>
+
+  <% else %>
+
+    <p style="background-color:yellow"> No recipes found </p>
+
+  <% end %>
+
+
+<%end%>

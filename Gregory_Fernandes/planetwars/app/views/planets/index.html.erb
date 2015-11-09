@@ -1,0 +1,21 @@
+<%= link_to 'Click here to add a new Planet', new_planet_path %><br>
+
+
+<h1>Planets </h1>
+<%  @planets.each do | planet | %>
+
+
+  <br><img style="max-width: 30%" src=<%=planet.image_url%> alt="">
+  <br><%= planet.name %> 
+  <%= link_to 'edit', edit_planet_path(planet) %>
+
+  
+  <%= form_for planet, method: :delete do |f| %>
+
+    <button>delete</button>
+    
+  <% end %>
+
+
+<% end %>
+

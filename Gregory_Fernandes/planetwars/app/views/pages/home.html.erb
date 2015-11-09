@@ -1,0 +1,10 @@
+<h1>Planet Wars</h1>
+
+<h2>Planets</h2>
+
+<% @planets.each do |planet|  %>
+
+  <img style="max-width: 30%" src=<%=planet.image_url%> alt="">
+  <br><%= planet.name %> 
+
+<% end %>
